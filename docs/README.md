@@ -12,4 +12,4 @@
 
 > 从Vue基础语法入手，逐层递进，实战项目贴近企业流程，完全按照企业级别代码质量和工程开发流程进行授课，让你理解这套技术在企业中被使用的真实流程，更好的掌握Vue各个基础知识点。
 
-<img src="./static/image/content-img.jpg">
+<img src="https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/content-img.jpg">

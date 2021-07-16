@@ -8,5 +8,3 @@
 * 本地预览 `docsify serve docs`
 
 ![教程简介](https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/content-img.jpg)
-----------
-![教程简介](./static/image/content-img.jpg)
