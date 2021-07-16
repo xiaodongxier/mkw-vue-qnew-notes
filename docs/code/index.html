@@ -1,8 +1,31 @@
 <!--
  * @Date: 2021-06-17 10:35:12
- * @LastEditTime: 2021-06-17 11:21:31
+ * @LastEditTime: 2021-07-16 17:07:23
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
 -->
-这是测试文件夹
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模版语法</title>
+    <script src="../static/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{mess}}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                mess: "hello world"
+            }
+        })
+    </script>
+</body>
+</html>
