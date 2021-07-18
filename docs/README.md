@@ -2,6 +2,8 @@
 
 > 课程地址：[https://coding.imooc.com/class/chapter/203.html](https://coding.imooc.com/class/chapter/203.html)
 
+> 课程 [学习进度](https://github.com/xiaodongxier/mkw-vue-qnew-notes/projects/1) 记录
+
 > 课程学习步骤
 > 1. 笔记使用Mweb记录并存储在GitHub中 `mkw-vue-qnew-notes` 项目
 > 2. 代码使用vs code 存储在GitHub中 `mkw-vue-qnew-notes` 项目

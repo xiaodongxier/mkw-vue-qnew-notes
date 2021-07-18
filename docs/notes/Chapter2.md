@@ -11,13 +11,9 @@
 
 
 
-
-
-
-
 ## 2-2 hello world
 
-
+> Vue **不支持** IE8 及以下版本，因为 Vue 使用了 IE8 无法模拟的 ECMAScript 5 特性。但它支持所有[兼容 ECMAScript 5 的浏览器](https://caniuse.com/#feat=es5)。
 
 
 
