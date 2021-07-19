@@ -17,23 +17,69 @@
 
 > 视频教程中 vue版本为 v2.5.13，npm 下载此版本命令 `sudo npm i vue@2.5.13`
 
+```html
+<div id="vueapp">{{mess}}</div>
+<script>
+    var vueapp = new Vue({
+        el: "#vueapp",
+        data: {
+            mess: "hello world"
+        }
+    })
+</script>
+```
 
-
-
-
-
+* **el** - 实例负责管理的一个区域（限制vue实例处理的DOM的范围）
+* **data** - 定义的数据
+* **{{mess}}** - 插值表达式
 
 
 
 ## 2-3 开发TodoList（v-model、v-for、v-on）
 
+> 参考项目：http://todolist.cn
 
 
 
+```html
+<div id="app">
+    <input type="text" v-model="inputValue">
+    <button v-on:click="handBtnClick">提交</button>
+    <ul>
+        <li v-for="item in list">{{item}}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            list:[],
+            inputValue: ""
+        },
+        methods: {
+            handBtnClick: function(){
+                this.list.push(this.inputValue)
+                this.inputValue = ""
+            }
+        }
+    })
+</script>
+```
+[Demo预览](../code/2-3-1-todolist.html)
+
+### 指令
+
+* **v-for** - 数据循环
+    * **list** - 指data中的数据list
+    * **item** - 指list数据中的每一项
+* **v-on** - 事件绑定
+    * **:click** - 冒号修饰符后跟事件
+* **v-model** - 数据双向绑定
 
 
+### mvvm 设计模式，
 
-
+> 不操作DOM，而是操作数据
 
 
 

@@ -1,6 +1,6 @@
 <!--
  * @Date: 2021-06-17 10:35:12
- * @LastEditTime: 2021-07-19 14:04:11
+ * @LastEditTime: 2021-07-19 15:00:06
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
@@ -11,40 +11,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hello world</title>
+    <title>todolist</title>
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/favicon.ico" type="image/x-icon">
     <script src="../static/js/old/vue.js"></script>
 </head>
 <body>
     <h2>原生实现</h2>
-    <div id="app"></div>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <button v-on:click="handBtnClick">提交</button>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+    </div>
     <script>
-        var app = document.getElementById("app");
-        app.innerHTML = "hello world"
-        setTimeout(function(){
-            app.innerHTML = "bye world"
-        },2000)
-    </script>
-
-
-
-
-
-    <h2>vue实现</h2>
-    <div id="vueapp">{{mess}}</div>
-    <script>
-        var vueapp = new Vue({
-            el: "#vueapp",
+        var app = new Vue({
+            el: "#app",
             data: {
-                mess: "hello world"
+                list:[],
+                inputValue: ""
+            },
+            methods: {
+                handBtnClick: function(){
+                    this.list.push(this.inputValue)
+                    this.inputValue = ""
+                }
             }
         })
-        setTimeout(function(){
-            vueapp.$data.mess = "bye world"
-        },2000)
     </script>
-
-
 
 
 
