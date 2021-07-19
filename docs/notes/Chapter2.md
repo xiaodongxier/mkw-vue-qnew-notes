@@ -10,7 +10,6 @@
 * 官方文档：https://cn.vuejs.org
 
 
-
 ## 2-2 hello world
 
 > Vue **不支持** IE8 及以下版本，因为 Vue 使用了 IE8 无法模拟的 ECMAScript 5 特性。但它支持所有[兼容 ECMAScript 5 的浏览器](https://caniuse.com/#feat=es5)。
@@ -28,6 +27,8 @@
     })
 </script>
 ```
+[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-2-1-helloworld.html)
+
 
 * **el** - 实例负责管理的一个区域（限制vue实例处理的DOM的范围）
 * **data** - 定义的数据
@@ -38,8 +39,6 @@
 ## 2-3 开发TodoList（v-model、v-for、v-on）
 
 > 参考项目：http://todolist.cn
-
-
 
 ```html
 <div id="app">
@@ -65,7 +64,7 @@
     })
 </script>
 ```
-[Demo预览](../code/2-3-1-todolist.html)
+[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-3-1-todolist.html)
 
 ### 指令
 
@@ -80,10 +79,6 @@
 ### mvvm 设计模式，
 
 > 不操作DOM，而是操作数据
-
-
-
-
 
 ## 2-4 MVVM模式
 
