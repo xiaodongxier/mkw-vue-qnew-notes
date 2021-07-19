@@ -1,6 +1,6 @@
 <!--
  * @Date: 2021-06-17 10:35:12
- * @LastEditTime: 2021-07-18 22:57:19
+ * @LastEditTime: 2021-07-19 11:07:19
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
@@ -16,11 +16,22 @@
     <script src="../static/js/old/vue.js"></script>
 </head>
 <body>
+    <h2>原生实现</h2>
     <div id="app"></div>
-
     <script>
         var app = document.getElementById("app");
         app.innerHTML = "hello world"
+    </script>
+
+    <h2>vue实现</h2>
+    <div id="vueapp">{{mess}}</div>
+    <script>
+        var vueapp = new Vue({
+            el: "#vueapp",
+            data: {
+                mess: "hello world"
+            }
+        })
     </script>
 </body>
 </html>
