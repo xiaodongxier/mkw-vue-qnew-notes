@@ -27,7 +27,7 @@
     })
 </script>
 ```
-[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-2-1-helloworld.html)
+[Demo预览](https://xiaodongxier.github.io/mkw-vue-qnew-notes/code/2-2-1-helloworld.html)
 
 
 * **el** - 实例负责管理的一个区域（限制vue实例处理的DOM的范围）
@@ -64,7 +64,7 @@
     })
 </script>
 ```
-[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-3-1-todolist.html)
+[Demo预览](https://xiaodongxier.github.io/mkw-vue-qnew-notes/code/2-3-1-todolist.html)
 
 ### 指令
 
@@ -122,7 +122,7 @@
     page.init()
 </script>
 ```
-[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-4-1-jquery-todolist.html)
+[Demo预览](https://xiaodongxier.github.io/mkw-vue-qnew-notes/code/2-4-1-jquery-todolist.html)
 
 
 ### MVVM
@@ -164,7 +164,7 @@
     })
 </script>
 ```
-[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-3-1-todolist.html)
+[Demo预览](https://xiaodongxier.github.io/mkw-vue-qnew-notes/code/2-3-1-todolist.html)
 
 
 
