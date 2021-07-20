@@ -122,6 +122,7 @@
     page.init()
 </script>
 ```
+[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-4-1-jquery-todolist.html)
 
 
 ### MVVM
@@ -163,6 +164,7 @@
     })
 </script>
 ```
+[Demo预览](https://github.xiaodongxier.com/mkw-vue-qnew-notes/code/2-3-1-todolist.html)
 
 
 
