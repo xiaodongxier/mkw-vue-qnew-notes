@@ -82,41 +82,141 @@
 
 ## 2-4 MVVM模式
 
+### MVP 设计模式
+
+> 面向 DOM 开发
 
 
+![MVP设计模式](https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/7IvknQ.png)
+
+* **M** - 数据层
+* **V** - 呈现层（业务逻辑-控制层）
+* **P** - 视图层（页面上的DOM展示-占多部分）
 
 
+```html
+<div>
+    <input type="text" id="input">
+    <button id="btn">提交</button>
+    <ul id="list"></ul>
+</div>
+<script>
+    function Page(){}
+    $.extend(Page.prototype,{
+        init: function(){
+            this.bindEvents();
+        },
+        bindEvents: function(){
+            var btn = $("#btn");
+            btn.on('click',$.proxy(this.handleBtnClick,this))
+        },
+        handleBtnClick: function(){
+            var inputElem = $("#input");
+            var inputValue = inputElem.val();
+            var ulElem = $("#list");
+            ulElem.append('<li>'+ inputValue +'</li>')
+            inputElem.val("")
+        }
+    })
+    var page = new Page();
+    page.init()
+</script>
+```
 
 
+### MVVM
+
+> 面向数据开发，只需关注 M 层的开发
+
+![MVVM设计模式](https://raw.githubusercontent.com/xiaodongxier/static/main/qnew/O9HYpI.png)
+
+<!-- ![MVVM设计模式](https://raw.githubusercontent.com/xiaodongxier/static/main/qnew/GXDMgB.png) -->
 
 
+* **M-Model** - 模型层(存储数据)
+* **VM-ViewModel** - vue内置
+* **V-View** - 视图层
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```html
+<!-- v层 -->
+<div id="app">
+    <input type="text" v-model="inputValue">
+    <button v-on:click="handBtnClick">提交</button>
+    <ul>
+        <li v-for="item in list">{{item}}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            list:["数据1","数据2"],
+            inputValue: ""
+        },
+        methods: {
+            handBtnClick: function(){
+                this.list.push(this.inputValue)
+                this.inputValue = ""
+            }
+        }
+    })
+</script>
+```
 
 
 
 ## 2-6 前端组件化
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,49 @@
+<!--
+ * @Date: 2021-06-17 10:35:12
+ * @LastEditTime: 2021-07-20 16:05:54
+ * @Author: WangYongJie
+ * @Work-email: wangyongjie2@gome.com.cn
+ * @Private-email: admin@xiaodongxier.com
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist jquery</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/favicon.ico"
+        type="image/x-icon">
+    <script src="../static/js/new/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <input type="text" id="input">
+        <button id="btn">提交</button>
+        <ul id="list"></ul>
+    </div>
+
+    <script>
+        // 构造函数
+        function Page(){}
+        $.extend(Page.prototype,{
+            init: function(){
+                this.bindEvents();
+            },
+            bindEvents: function(){
+                var btn = $("#btn");
+                btn.on('click',$.proxy(this.handleBtnClick,this))
+            },
+            handleBtnClick: function(){
+                var inputElem = $("#input");
+                var inputValue = inputElem.val();
+                var ulElem = $("#list");
+                ulElem.append('<li>'+ inputValue +'</li>')
+                inputElem.val("")
+            }
+        })
+        var page = new Page();
+        page.init()
+    </script>
+</body>
+</html>
