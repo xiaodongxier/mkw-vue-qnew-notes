@@ -1,28 +1,89 @@
 <!--
  * @Date: 2021-07-19 10:20:08
- * @LastEditTime: 2021-07-20 16:07:36
+ * @LastEditTime: 2021-08-02 19:43:09
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>活动页面演示</title>
-    <link rel="stylesheet" href="../static/css/index.css">
+<script>
+    // ==UserScript==
+// @name        老系统融入新系统
+// @namespace   Violentmonkey Scripts
+// @match       http://gcms.ds.gome.com.cn/h5/*
+// @grant       none
+// @version     1.0
+// @author      -
+// @description 2021/8/2 下午7:06:32
+// ==/UserScript==
+var dom_page_app = `
     <style>
-        video {
-            width: 100%;
-            opacity: .3;
-        }
-    </style>
-</head>
-<body>
-    <img src="/Users/xiaodongxier/Desktop/1.jpeg" alt="">
-    <!-- <img src="http://gfs8.gomein.net.cn/wireless/T1VXJWBbdT1RCvBVdK_752_1234.jpg" alt=""> -->
-    <video src="http://10.2.112.50:8080/2-6.mp4" controls="controls"></video>
-</body>
-</html>
+  .el-header {
+    background:#202229;
+  }
+header.el-header {
+        padding-top: 0;
+    }
+
+    header.el-header h1 {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-top: -13px;
+    }
+
+    header.el-header h1 img {
+        width: 100%;
+    }
+  
+      header .links {
+            padding-top: 15px;
+    margin-left: 20px;
+    }
+  
+  .el-header {
+        height: 70px!important;
+  }
+/*    */
+        .mypage {
+        display: block;
+        width: 100vw;
+        height: 95vh;
+        color:#327ab7;
+    }
+  </style>
+    `;
+    $("body").append(dom_page_app);
+    $("header .links").append(`
+    <a href="javascript:;" class="mybtn btn1">旧版ERM</a>
+    <a href="javascript:;" class="mybtn btn2">PC管理</a>
+    <a href="javascript:;" class="mybtn btn3">旧图片管理</a>
+    <a href="javascript:;" class="mybtn btn4">资源管理</a>
+    <a href="javascript:;" class="mybtn btn5">旧频道页</a>
+    <a href="javascript:;" class="mybtn btn6">旧自制模块</a>
+    `);
+
+    $("header .links a").click(function() {
+        $(this).addClass("active").siblings("a").removeClass("active")
+    })
+    $("header.el-header h1").html('<img src="https://gfs5.gomein.net.cn/T1CPdWBgZT1RCvBVdK.gif">')
+
+
+    $(".btn1").click(function() {
+        $(".el-container>.el-container").html(`<iframe src="http://cms.ds.gome.com.cn/gome-mobile-web/pageinfo/sale_pageinfo_list.do" frameborder="0" class="mypage mypage1"></iframe>`)
+    })
+    $(".btn2").click(function() {
+        $(".el-container>.el-container").html(`<iframe src="http://cxcms.ds.gome.com.cn/gome-cms-web/pageGenerator/pageList.do" frameborder="0" class="mypage mypage2"></iframe>`)
+    })
+    $(".btn3").click(function() {
+        $(".el-container>.el-container").html(`<iframe src="http://cncms.ds.gome.com.cn/gomeCmsImgInfo/list.do" frameborder="0" class="mypage mypage3"></iframe>`)
+    })
+    $(".btn4").click(function() {
+        $(".el-container>.el-container").html(`<iframe src="http://cncms.ds.gome.com.cn/gomeCmsCssJsInfo/list.do" frameborder="0" class="mypage mypage4"></iframe>`)
+    })
+    $(".btn5").click(function() {
+        $(".el-container>.el-container").html(`<iframe src="http://cms.ds.gome.com.cn/gome-mobile-web/pageinfo/channel_pageinfo_list.do" frameborder="0" class="mypage mypage5"></iframe>`)
+    })
+    $(".btn6").click(function() {
+        $(".el-container>.el-container").html(`<iframe src="http://cms.ds.gome.com.cn/gome-mobile-web/usertemplet/list.do" frameborder="0" class="mypage mypage6"></iframe>`)
+    })
+</script>
