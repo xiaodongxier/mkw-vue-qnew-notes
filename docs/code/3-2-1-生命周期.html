@@ -1,0 +1,68 @@
+<!--
+ * @Date: 2021-06-17 10:35:12
+ * @LastEditTime: 2021-07-19 11:03:09
+ * @Author: WangYongJie
+ * @Work-email: wangyongjie2@gome.com.cn
+ * @Private-email: admin@xiaodongxier.com
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模版语法</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/favicon.ico" type="image/x-icon">
+    <!-- v2.5.13  -->
+    <script src="../static/js/old/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{mess}}
+    </div>
+
+    <script>
+        console.clear();
+        console.log('%c ------------分割线------------', 'color:red;font-size:20px;font-weight:900;background:#444');
+        console.log("打印成功✅")
+        var app = new Vue({
+            el: "#app",
+            data: {
+                mess: "hello world"
+            },
+            beforeCreate: function(){
+                console.log(this.$el)
+                console.log("beforeCreate","创建前")
+            },
+            created: function(){
+                console.log(this.$el)
+                console.log("created","创建后")
+            },
+            beforeMount: function(){
+                console.log(this.$el)
+                console.log("beforeMount","挂载前")
+            },
+            mounted: function(){
+                console.log(this.$el)
+                console.log("mounted","创建完成")
+            },
+            beforeUpdate: function(){
+                console.log(this.$el)
+                console.log("beforeUpdate","数据更新之前")
+            },
+            updated: function(){
+                console.log(this.$el)
+                console.log("updated","数据更新完成")
+            },
+            beforeDestroy: function(){
+                console.log(this.$el)
+                console.log("beforeDestroy","销毁之前")
+            },
+            destroyed: function(){
+                console.log(this.$el)
+                console.log("destroyed","销毁之后")
+            }
+        })
+    </script>
+</body>
+</html>

@@ -25,7 +25,7 @@
 
 ## 3-2 Vue实例生命周期
 
-> 生命周期函数是vue实例在某一时间点，会自动执行的函数
+> 生命周期函数是vue实例在某一**时间点**，会**自动执行**的函数
 
 ![生命周期函数](../static/image/lifecycle.png)
 
@@ -40,6 +40,7 @@
 * beforeDestory - 销毁前
 * destoryed - 销毁后 
 
+**⚠️ vue生命周期函数并不放在`methods`对象里面**
 
 ### beforeCreate( 创建前 )
 
@@ -79,6 +80,26 @@
 
 ## 3-3 Vue的模版语法
 
+> 凡是 `v-` 指令后面跟的都是js表达式
+
+* 插值表达式
+* v-text
+* v-html
+
+> 以上三个都可以写表达式
+
+```html
+<div id="app">
+    <div>{{mess + " 哈哈哈"}}</div>
+    <div v-text="mess + ' 哈哈哈'"></div>
+    <div v-html="mess"></div>
+</div>
+```
+
+* v-on
+* v-bind
+
+
 
 ## 3-4 计算属性,方法与侦听器
 
@@ -108,3 +129,9 @@
 
 
 ## 3-13 【讨论题】你对前端中的面向对象有怎样的了解？
+
+
+## 参考
+
+1. [Vue - 生命周期详解 - 简述](https://www.jianshu.com/p/672e967e201c)
+2. [vue生命周期 - vue官网](https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)

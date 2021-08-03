@@ -18,14 +18,15 @@
 </head>
 <body>
     <div id="app">
-        {{mess}}
+        <div>{{mess + " 哈哈哈"}}</div>
+        <div v-text="mess + ' 哈哈哈'"></div>
+        <div v-html="mess"></div>
     </div>
 
     <script>
         console.clear();
         console.log('%c ------------分割线------------', 'color:red;font-size:20px;font-weight:900;background:#444');
         console.log("打印成功✅")
-
         var app = new Vue({
             el: "#app",
             data: {
