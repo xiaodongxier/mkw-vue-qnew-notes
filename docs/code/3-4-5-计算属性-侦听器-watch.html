@@ -1,0 +1,67 @@
+<!--
+ * @Date: 2021-06-17 10:35:12
+ * @LastEditTime: 2021-08-09 16:47:21
+ * @Author: WangYongJie
+ * @Work-email: wangyongjie2@gome.com.cn
+ * @Private-email: admin@xiaodongxier.com
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-4-5-计算属性-侦听器-watch</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/favicon.ico" type="image/x-icon">
+    <!-- v2.5.13  -->
+    <script src="../static/js/old/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>{{firstName + lastName}}</div>
+        <div>{{age}}</div>
+    </div>
+
+    <script>
+        console.clear();
+        console.log('%c ------------分割线------------', 'color:red;font-size:20px;font-weight:900;background:#444');
+        console.log("打印成功✅")
+        var app = new Vue({
+            el: "#app",
+            data: {
+                firstName: "Dong",
+                lastName: "Xier",
+                fullName: "Dong Xier",
+                age: "28"
+            },
+            watch: {
+                firstName: function(){
+                    console.log("计算了一次")
+                    this.fullName = this.firstName + " " + this.lastName ;
+                },
+                lastName: function(){
+                    console.log("计算了一次")
+                    this.fullName = this.firstName + " " + this.lastName ;
+                }
+            }
+            // 方法
+            // methods: {
+            //     fullName: function(){
+            //         console.log("计算了一次","methods")
+            //         return this.firstName + " " + this.lastName
+            //     }
+            // }
+            // // 计算属性
+            // computed:{
+            //     fullName: function(){
+            //         console.log("计算了一次")
+            //         return this.firstName + " " + this.lastName
+            //     }
+            // }
+        })
+
+        // app.firstName ="22333"   提示计算了一次
+        // app.firstName ="22333"   不会提示计算了一次
+    </script>
+</body>
+</html>

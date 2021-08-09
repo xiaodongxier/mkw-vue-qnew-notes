@@ -104,19 +104,82 @@
 ## 3-4 计算属性,方法与侦听器
 
 
-### 计算属性
+### 计算属性 (computed)
 
-> computed
+> 存在缓存 - 计算过的值不发生改变不会进行重新计算
+
+通过计算属性能减少数据的冗余
+
+```js
+var app = new Vue({
+    el: "#app",
+    data: {
+        firstName: "Dong",
+        lastName: "Xier",
+        age: "28"
+    },
+    // 计算属性
+    computed:{
+        fullName: function(){
+            console.log("计算了一次")
+            return this.firstName + " " + this.lastName
+        }
+    }
+})
+```
+
+### 方法 (methods)
+
+没有 `computed` 效果好，因为 `computed` 存在缓存机制，而 `methods` 没有，所以只要数据进行变更(不管是否是否是需要计算的变更)就要重新进行计算一次
+
+
+```js
+var app = new Vue({
+    el: "#app",
+    data: {
+        firstName: "Dong",
+        lastName: "Xier",
+        age: "28"
+    },
+    methods: {
+        fullName: function(){
+            console.log("计算了一次","methods")
+            return this.firstName + " " + this.lastName
+        }
+    }
+})
+```
+
+### 侦听器 (watch)
+
+```js
+var app = new Vue({
+    el: "#app",
+    data: {
+        firstName: "Dong",
+        lastName: "Xier",
+        fullName: "Dong Xier",
+        age: "28"
+    },
+    watch: {
+        firstName: function(){
+            console.log("计算了一次")
+            this.fullName = this.firstName + " " + this.lastName ;
+        },
+        lastName: function(){
+            console.log("计算了一次")
+            this.fullName = this.firstName + " " + this.lastName ;
+        }
+    }
+})
+```
+
+也存在缓存机制，但是 `watch` 语法比 `computed` 语法复杂了很多
 
 
 
 
-
-
-
-
-
-
+> 通过以上学习，如果需求通过以上方法都可以解决，那么**优先推荐 `计算属性 (computed)` 方法进行实现**
 
 
 ## 3-5 计算属性的 getter 和 setter
