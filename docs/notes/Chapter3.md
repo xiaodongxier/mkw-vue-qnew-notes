@@ -184,16 +184,33 @@ var app = new Vue({
 
 ## 3-5 计算属性的 getter 和 setter
 
-插值表达式在data里面先找，如果找不到再去computed计算属性里面找
+* 插值表达式在data里面先找，如果找不到再去 computed 计算属性里面找对应的数据
 
 
+* 依赖的值发生变化 computed 才会执行
 
 
-
-
-
-
-
+```js
+var app = new Vue({
+    el: "#app",
+    data: {
+        firstName: "Xiao",
+        lastName: "Dongxier"
+    },
+    computed: {
+        fullName:{
+            get: function(){
+                return this.firstName + "" + this.lastName
+            },
+            set: function(value){
+                var arr = value.split(" ");
+                this.firstName = arr[0]
+                this.lastName = arr[1]
+            }
+        }
+    }
+})
+```
 
 
 
