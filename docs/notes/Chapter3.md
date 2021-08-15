@@ -215,28 +215,156 @@ var app = new Vue({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 3-6 Vue中的样式绑定
 
+> 官网文档部分：[Class 与 Style 绑定](https://cn.vuejs.org/v2/guide/class-and-style.html)
+
+> class 的对象绑定
+
+```html
+<div id="app">
+    <div @click="handleDivClick"
+            :class="{actived: isActived}"
+        >{{mess}}
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            mess: "hello world",
+            isActived: false
+        },
+        methods: {
+            handleDivClick: function(){
+                this.isActived = !this.isActived
+            }
+        }
+    })
+</script>
+```
+
+> class 的数组绑定
+
+```html
+<div id="app">
+    <div @click="handleDivClick"
+            :class="[actived]"
+        >测试内容& {{actived}}
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            actived: ""
+        },
+        methods: {
+            handleDivClick: function(){
+                // if(this.actived == "actived") {
+                //     this.actived = "";
+                // } else{
+                //     this.actived = "actived";
+                // }
+                this.actived = this.actived == "" ? "actived" : ""
+            }
+        }
+    })
+</script>
+```
+
+> 关于三元表达式的问题
+
+![关于三元表达式的问题](https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/ujKEss.png)
+
+三元表达式是赋值的结果，是吧值赋给最前面的 `this.actived`
+
+
+> 内联实现也分为两种 
+> 1. 对象 的方式
+
+```html
+<div id="app">
+    <div :style="styleObj" @click="handDivClick">测试内容</div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            styleObj: {
+                color : "red"
+            }
+        },
+        methods: {
+            handDivClick: function(){
+                console.log(this.styleObj.color);
+                this.styleObj.color  = this.styleObj.color == "red" ? "blue" : "red"
+            }
+        }
+    })
+</script>
+```
+
+> 2. 数组 的方式
+
+
+```html
+<div id="app">
+    <div :style="[styleObj,{fontSize:'30px'}]" @click="handDivClick">测试内容</div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            styleObj: {
+                color : "red"
+            }
+        },
+        methods: {
+            handDivClick: function(){
+                console.log(this.styleObj.color);
+                this.styleObj.color = this.styleObj.color === "black" ? "red" : "black";
+            }
+        }
+    })
+</script>
+```
 
 ## 3-7 Vue中的条件渲染
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 3-8 Vue中的列表渲染
+
+
+
+
+
 
 
 ## 3-9 Vue中的set方法
