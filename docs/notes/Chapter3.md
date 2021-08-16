@@ -334,27 +334,54 @@ var app = new Vue({
 ## 3-7 Vue中的条件渲染
 
 
+> 官网文档部分：[条件渲染](https://cn.vuejs.org/v2/guide/conditional.html)
 
 
+### v-if  & v-else-if & v-else
+
+值为 `true`  和 `false` ，决定 `dom` 节点是否挂在到页面上。
+
+ `v-if`  & `v-else-if` & `v-else` 同时使用的时候要紧贴相邻才可以，如果中间有其他节点会报错
 
 
+### v-show
+
+值为 `true`  和 `false` ，决定 `dom` 节点是显示还是隐藏。
 
 
+> 区别：
+> 1. v-if 是直接移除或者新建DOM节点
+> 2. v-show 是直接修改css属性display的值为block或者none
 
 
+```html
+<div id="app">
+    <div v-if="show" data-show="v-if">{{show}}</div>
+    <div v-else data-show="v-else">v-else</div>
+    <div v-show="show" data-show="v-show">{{show}}</div>
+    <button @click="btnClick">显示/隐藏</button>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            show: false
+        },
+        methods: {
+            btnClick: function(){
+                this.show = !this.show
+                // this.show = this.show == false ? true : false;
+            }
+        }
+    })
+</script>
+```
 
 
+### key
 
-
-
-
-
-
-
-
-
-
-
+存在的问题： vue重新渲染页面的时候，它会尽力尝试复用页面上存在的DOM
 
 
 
