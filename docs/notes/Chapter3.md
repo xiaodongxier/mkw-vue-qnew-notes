@@ -277,7 +277,7 @@ var app = new Vue({
 
 ![关于三元表达式的问题](https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/ujKEss.png)
 
-三元表达式是赋值的结果，是吧值赋给最前面的 `this.actived`
+三元表达式是赋值的结果，是把值赋给最前面的 `this.actived`
 
 
 > 内联实现也分为两种 
@@ -381,10 +381,36 @@ var app = new Vue({
 
 ### key
 
-存在的问题： vue重新渲染页面的时候，它会尽力尝试复用页面上存在的DOM
+> Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这么做除了使 Vue 变得非常快之外，还有其它一些好处。例如，如果你允许用户在不同的登录方式之间切换：
+
+```vue
+<template v-if="loginType === 'username'">
+  <label>Username</label>
+  <input placeholder="Enter your username">
+</template>
+<template v-else>
+  <label>Email</label>
+  <input placeholder="Enter your email address">
+</template>
+```
+
+那么在上面的代码中切换 `loginType` 将不会清除用户已经输入的内容。因为两个模板使用了相同的元素，`<input>` 不会被替换掉——仅仅是替换了它的 `placeholder`。
+
+> 这样也不总是符合实际需求，所以 Vue 为你提供了一种方式来表达“这两个元素是完全独立的，不要复用它们”。只需添加一个具有唯一值的 key attribute 即可：
 
 
+```vue
+<template v-if="loginType === 'username'">
+  <label>Username</label>
+  <input placeholder="Enter your username" key="username-input">
+</template>
+<template v-else>
+  <label>Email</label>
+  <input placeholder="Enter your email address" key="email-input">
+</template>
+```
 
+这样每次切换时，输入框都将被重新渲染。
 
 
 ## 3-8 Vue中的列表渲染
@@ -392,11 +418,74 @@ var app = new Vue({
 > 官网文档部分：[列表渲染](https://cn.vuejs.org/v2/guide/list.html)
 
 
-> 我们可以用 v-for 指令基于一个数组来渲染一个列表。v-for 指令需要使用 item in items 形式的特殊语法，其中 items 是源数据数组，而 item 则是被迭代的数组元素的别名。
-
+> 我们可以用 `v-for` 指令基于一个数组来渲染一个列表。`v-for` 指令需要使用 `item in items` 形式的特殊语法，其中 `items` 是源数据数组，而 `item` 则是被迭代的数组元素的**别名**。
 
 [在线测试代码](https://jsbin.com/netunov/edit?html,js,output)
 
+### 用 v-for 把一个数组对应为一组元素
+
+> 在 `v-for` 块中，我们可以访问所有父作用域的 property。`v-for` 还支持一个可选的第二个参数，即当前项的索引。
+
+```html
+<div id="app">
+    <div v-for="item of items">
+        {{item.name}} -- {{item.age}}
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            items: [
+                {
+                    name: "zhangshan",
+                    age: "18"
+                },
+                {
+                    name: "xiaodongxier",
+                    age: "19"
+                }
+            ]
+        }
+    })
+</script>
+```
+
+> 在 `v-for` 块中，我们可以访问所有父作用域的 property。`v-for` 还支持一个可选的第二个参数，即当前项的索引。
+
+
+
+```html
+<div id="app">
+    <div v-for="(item,index) of items">
+        {{item.name}} -- {{index}} -- {{item.age}}
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            items: [
+                {
+                    name: "zhangshan",
+                    age: "18"
+                },
+                {
+                    name: "xiaodongxier",
+                    age: "19"
+                }
+            ]
+        }
+    })
+</script>
+```
+
+
+**你也可以用 `of` 替代 `in` 作为分隔符，因为它更接近 JavaScript 迭代器的语法：**
+
+
+
+### 在 v-for 里使用对象
 
 
 
@@ -420,6 +509,17 @@ var app = new Vue({
 
 
 
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 

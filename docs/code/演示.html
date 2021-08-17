@@ -1,6 +1,6 @@
 <!--
  * @Date: 2021-07-19 10:20:08
- * @LastEditTime: 2021-08-16 15:33:10
+ * @LastEditTime: 2021-08-17 16:22:29
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
@@ -30,3 +30,31 @@
 
 
 
+
+<script>
+    // ==UserScript==
+// @name        vue官网看视频
+// @namespace   Violentmonkey Scripts
+// @match       https://cn.vuejs.org/*
+// @grant       none
+// @version     1.0
+// @author      -
+// @description 2021/8/2 下午7:06:32
+// ==/UserScript==
+var dom_page_app = `
+    <style>
+  .myvideo {
+            position: fixed;
+            left:0 ;
+            z-index: 99999999999;
+            display: block;
+            width: 400px;
+/*             height: 50px; */
+            bottom: 0;
+            opacity: .5;
+        }
+  </style>
+    <video class="myvideo" src="http://localhost:8081/3-8.mp4" controls="controls"></video>
+    `;
+    $("body").append(dom_page_app);
+</script>
