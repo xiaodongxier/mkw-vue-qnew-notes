@@ -16,11 +16,13 @@
 
 
 
-
-
-
-
 ## 5-2 在Vue中使用 animate.css 库
+
+
+
+* 必须自定义class的形式
+* class类必须包含一个animated的类
+
 
 ## 5-3 在Vue中同时使用过渡和动画
 
