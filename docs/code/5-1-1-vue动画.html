@@ -1,6 +1,6 @@
 <!--
  * @Date: 2021-06-17 10:35:12
- * @LastEditTime: 2021-08-23 14:19:05
+ * @LastEditTime: 2021-09-01 15:08:10
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
@@ -18,18 +18,21 @@
     <style>
         .v-enter {
             background: red;
-            opacity: 0;
+            opacity: 0.5;
         }
 
-        .v-enter-active {
+        .v-enter-to {
             background: blue;
-            transition: opacity 2s;
+            transition: opacity 1s;
         }
 
     </style>
 </head>
 <body>
     <div id="app">
+        <transition>
+            <div v-if="show">hello world </div>
+        </transition>
         <transition>
             <div v-if="show">hello world </div>
         </transition>
