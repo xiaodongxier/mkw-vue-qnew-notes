@@ -69,7 +69,7 @@ vue -V
 ### 项目初始化
 
 
-* *vue init webpack FileName(文件夹名称)
+* *vue init webpack FileName(文件夹名称,不能包含大写字母)
 * Target directory exists. Continue? (文件夹已存在是否继续)
 * Project name(项目名)
 * Project description (A Vue.js project) (项目的一个描述)
