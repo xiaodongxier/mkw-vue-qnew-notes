@@ -65,6 +65,11 @@ npm install -g vue-cli@2.x
 vue -V
 ```
 
+**视频教程版本**
+
+```shell
+sudo npm install -g vue-cli@2.8
+```
 
 ### 项目初始化
 
@@ -97,24 +102,58 @@ vue -V
 
 
 
-
-## 6-2 （新）Vue项目预热 - 项目环境准备(答疑)
-
+<!-- ## 6-2 （新）Vue项目预热 - 项目环境准备(答疑) -->
 
 
 
 
 
+<!-- ## 6-3 Vue项目预热 - 项目代码介绍 -->
+
+## 6-2 项目代码结构介绍
+
+![代码结构介绍](https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/Owmhg0.png)
+
+> README
+
+项目的介绍
 
 
 
+> /static
+
+静态资源
+
+> /node_modules
+
+引用的npm包
+
+> /src
+
+
+> /config
+
+
+> /config
 
 
 
-## 6-3 Vue项目预热 - 项目代码介绍
+> /config
 
 
+> /config
 
+
+> /config
+
+
+> /config
+
+
+> /config
+
+
+> /config
 
 
 
