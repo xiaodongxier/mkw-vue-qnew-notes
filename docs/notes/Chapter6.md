@@ -163,10 +163,49 @@ sudo npm install -g vue-cli@2.8
 
 
 
+> 文件以vue后缀结尾的文件称之为`单文件组建`
+
+```js
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <router-view/>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+```
+
+> 根据网址的不同，返回不同的页面给用户
+
+    
+
+> `<router-view/>` 显示的是当前路由地址所对应内容
+
+
+> **es6中键和值相同可以省略一部分内容**
 
 
 
+> 路径中的@符号
 
+
+> 通过配置项的对应关系，找到对应的路由内容
 
 
 
