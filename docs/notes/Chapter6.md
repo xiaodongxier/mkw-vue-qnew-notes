@@ -93,7 +93,7 @@ sudo npm install -g vue-cli@2.8
 * none (configure it yourself) 
 ---
 > 使用npm进行包管理还是使用Yern进行包管理，选择npm
-* Setup e2e tests with Nightwatch? (Y/n) (e2e端到端的测试，不会涉及太多，选择n)
+* Setup e2e tests with Nightwatch? (Y/n) (e2e端到端的开发，不会涉及太多，选择n)
 * *Should we run `npm install` for you after the project has been created?(recommended) (Use arrow keys)
     * Yes, use NPM 
     * Yes, use Yarn 
@@ -114,53 +114,45 @@ sudo npm install -g vue-cli@2.8
 
 ![代码结构介绍](https://cdn.jsdelivr.net/gh/xiaodongxier/static@main/qnew/Owmhg0.png)
 
-> README
 
-项目的介绍
-
-
-
-> /static
-
-静态资源
-
-> /node_modules
-
-引用的npm包
-
-> /src
-
-
-> /config
-
-
-> /config
-
-
-
-> /config
-
-
-> /config
-
-
-> /config
-
-
-> /config
-
-
-> /config
-
-
-> /config
-
-
-
-
-
-
-
+```shell
+├── README.md                       # 项目的介绍
+├── build                           # 项目打包的一些内容 webpack - 打包过程中额外的一些配置 
+│   ├── build.js                    # 
+│   ├── check-versions.js           #
+│   ├── logo.png                    #
+│   ├── utils.js                    #
+│   ├── vue-loader.conf.js          #
+│   ├── webpack.base.conf.js        # webpack基础配置项
+│   ├── webpack.dev.conf.js         # webpack 开发环境配置项
+│   └── webpack.prod.conf.js        # webpack 线上环境配置项
+├── config                          # 项目的配置文件
+│   ├── dev.env.js                  # 开发环境配置信息
+│   ├── index.js                    # 基础信息
+│   └── prod.env.js                 # 线上环境配置信息
+├── index.html                      # 项目默认的首页模版文件
+├── LICENSE                         # 开源协议说明
+├── .postcssrc.js                   # postcss的一个配置项
+├── .gitignore                      # 告诉git哪些文件不需要添加到版本管理中。比如我们项目中的npm包(node_modules)
+├── .eslintrc.js                    # 代码规范检测-里面写了相应的代码要求，必须按要求写才不会报错
+├── .eslintignore                   # 不受eslint代码规检测工具的检测， 配置的为文件路径
+├── .editorconfig                   # 配置编辑器里面的一些语法，tab 缩紧等信息
+├── .babelrc                        # 语法解析器  进行语法的转换 最终转换成浏览器能够编译执行的代码
+├── node_modules                    # 引用的npm包
+│   ├── ***                         #
+├── package-lock.json               # 依赖包锁文件-锁定安装时的包的版本号-保证团队编程的一个统一
+├── package.json                    # 项目所需要的各种模块(依赖的各种包)，以及项目的配置信息（比如名称、版本、许可证等元数据）
+├── src                             # 整个项目的源代码
+│   ├── App.vue                     # 项目最原始的跟组件
+│   ├── assets                      # 项目中用到的一些图片类的资源
+│   │   └── logo.png                # 
+│   ├── components                  # 项目中使用的组件
+│   │   └── HelloWorld.vue          #  
+│   ├── main.js                     # 整个项目的入口文件
+│   └── router                      # 路由
+│       └── index.js                # 项目中的路由
+├── static                          # 静态资源 - 静态图片 - 模拟的json数据 
+```
 
 
 ## 6-4 Vue项目预热 - 单文件组件与Vue中的路由
