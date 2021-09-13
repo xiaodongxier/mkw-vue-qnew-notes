@@ -212,26 +212,45 @@ export default {
 
 ## 6-5 Vue项目预热 - 单页应用VS多页应用
 
+### 多页面应用
+
+> 页面跳转 -> 返回HTML
+
+* 优点
+  * 首屏时间快 - 只有一个http请求
+  * SEO效果好 - 网页排名
+
+* 缺点
+  * 页面切换满
 
 
+### 单页面应用
+
+> 页面跳转 -> JS渲染
+
+* 优点
+  * 页面切换快
+  * 减少了http的请求
 
 
+* 缺点
+  * 首屏时间稍慢
+  * SEO差
 
+> 这些缺点，为什么还要用它呢？vue 其他技术能够解决这些问题，比如服务器渲染等技术。。。
 
+### 几个注意点
 
+* `vue` 中页面跳转一般用 `<router-link to="/list">列表</router-link>` 而不是 `<a>` 标签
+* `template` 模版里面向外暴露，只允许暴露一个跟标签
 
+### 代码检测会提示有问题的几个点
 
-
-
+* 字符串必须使用单引号 - Strings must use singlequot 
+* 文件末位需要换行符，但为找到 - Newline required at end of file but not found 
+* 多余的分号 -     Extra semicolon   
 
 ## 6-6 【讨论题】对前端路由，你有怎样的理解？
-
-
-
-
-
-
-
 
 
 
